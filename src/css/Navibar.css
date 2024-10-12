@@ -1,0 +1,257 @@
+/* Navigation Bar Styles */
+
+.navi-button-container {
+    position: relative; /* For positioning the glow line */
+    width: 180px;
+    height: 50px;
+    background-color: rgba(37, 37, 37, 0.8); /* Frosted look */
+    backdrop-filter: blur(5px); /* Subtle frosted effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light thin outline */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 25px;
+    margin: 35px auto; /* Center the navigation */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4); /* Updated box-shadow for a more subtle shadow */
+
+    display: flex; /* Flex layout for horizontal alignment */
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.navi-button-container a {
+    display: flex;
+    width: 74px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    background-color: rgba(34, 34, 34, 0.8); /* Consistent with container */
+    backdrop-filter: blur(5px); /* Subtle frosted effect */
+
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle drop shadow */
+    margin: 0 8px; /* Spacing between pills */
+    transition: background-color 0.3s ease;
+
+    font-size: 0.8em;
+    text-align: center;
+    position: relative; /* For potential future use */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+}
+
+.navi-button-container a:hover {
+    background-color: rgba(68, 68, 68, 0.8); /* Same as hover background */
+}
+
+/* Added active state styling */
+.navi-button-container a.active {
+    background-color: rgba(68, 68, 68, 0.8); /* Same as hover background */
+}
+
+.navi-button-container a.active:hover {
+    background-color: rgba(90, 90, 90, 0.8); /* Same as hover background */
+}
+
+.glow-line {
+    position: absolute;
+    top: -3px; /* Positioned above the links */
+    height: 3px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    transition: left 0.3s ease, width 0.3s ease;
+    margin-left: -2px;
+}
+
+/* New gradient element */
+.navi-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.918), rgba(0, 0, 0, 0));
+    pointer-events: none; /* Allows clicks through the gradient */
+    filter: blur(100px);
+}
+
+/* Navigation Container Styles */
+.navi-container {
+    position: fixed; /* Make the navibar fixed */
+    top: 0;          /* Position it at the top */
+    left: 0;         /* Align to the left */
+    width: 100%;     /* Full width */
+    z-index: 1000;   /* Ensure it stays above other elements */
+        
+    /* Adjust padding if necessary to accommodate the fixed position */
+    padding: 10px 0;
+}
+
+/* Adjust other elements if needed to prevent content from being hidden behind the fixed navibar */
+/* For example, you might need to add padding-top to the main content */
+
+body {
+    padding-top: 70px; /* Adjust this value based on the navibar's height */
+}
+
+/* Added styles for the icon */
+.navi-icon {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px; /* Adjust size as needed */
+    height: 48px;
+
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.25); /* Added subtle glow */
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+.navi-icon:hover {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4); /* Added subtle glow */
+}
+
+/* Added styles for the settings link and dropdown menu */
+.navi-socials {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.socials-link {
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 1em;
+}
+
+.socials-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    
+    /* Added transformation and transition for smooth scaling */
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.socials-glow:hover {
+    /* Updated to scale up on hover */
+    transform: scale(1.2);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(34, 34, 34, 0.541);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+    min-width: 80px;
+    z-index: 1001; /* Above the navibar */
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 5px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 0.7em;
+    border-radius: 25px;
+    text-align: left;
+}
+
+.dropdown-item a {
+    position: relative;
+    color: #fff; /* Default text color */
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.dropdown-item a:hover {
+    background-position: left; /* Animate the gradient from right to left */
+    color: transparent; /* Ensure text remains transparent to show gradient */
+    background-image: linear-gradient(to left, #81ffff, #ffffff); /* Blue gradient */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Makes the text take the background gradient */
+    /* Optional: Add a slight transition for a smooth effect */
+}
+
+/* Responsive styling for tablet devices */
+@media (max-width: 768px) {
+    .navi-icon {
+        left: 30px;
+        width: 40px; /* Adjust size as needed */
+        height: 40px;    
+
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Adjusted glow for smaller size */
+    }
+
+    .navi-button-container {
+        font-size: 1em;
+    }
+
+    .navi-socials {
+        right: 30px;
+        scale: 1.2;
+    }
+
+    .glow-line {
+        scale: 1.2;
+    }
+
+    .dropdown-menu {
+        min-width: 50px;
+        font-size: 1em;
+        margin-top: 20px;
+    }
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 480px) {
+    .navi-icon {
+        left: 30px;
+        width: 40px; /* Adjust size as needed */
+        height: 40px;    
+
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Adjusted glow for smaller size */
+    }
+
+    .navi-button-container {
+        font-size: 1.5em;
+    }
+
+    .navi-socials {
+        right: 30px;
+        scale: 1.2;
+    }
+
+    .glow-line {
+        scale: 1.2;
+    }
+
+    .dropdown-menu {
+        min-width: 50px;
+        font-size: 1.5em;
+        margin-top: 20px;
+    }
+}

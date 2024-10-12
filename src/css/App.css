@@ -1,0 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/neue-montreal'); /* Added Neue Montreal font */
+
+h1, h2, p, a {
+    font-family: 'Neue Montreal', sans-serif; /* Applied Neue Montreal font */
+}
+
