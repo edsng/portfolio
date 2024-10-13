@@ -155,14 +155,6 @@ h2 a {
     }
 }
 
-@media (max-width: 768px) {
-    .hero-container {
-        gap: 50px;
-        padding: 50px;
-        flex-direction: column;
-    }
-}
-
 .down-arrow {
   position: absolute;
   top: 500px; /* Adjust the distance from the bottom as needed */
@@ -193,4 +185,48 @@ h2 a {
     pointer-events: none; /* Allows interaction with underlying elements */
     opacity: 0.4;
     filter: blur(100px);
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        gap: 50px;
+        padding: 50px;
+        flex-direction: column;
+        margin-top: 150px;
+    }
+
+    .project-container {
+        margin-top: 219px;
+    }
+
+    .down-arrow {
+        margin-top: 40px; /* Adjust spacing as needed */
+        align-self: center; /* Ensures the arrow is centered */
+        left: 44%; /* Move to the horizontal center */
+        transform: translateX(-50%); /* Center the arrow precisely */
+        z-index: 100;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .hero-container {
+        gap: 50px;
+        padding: 50px;
+        flex-direction: column;
+        margin-top: 150px;
+    }
+
+    .project-container {
+        margin-top: 175px;
+    }
+
+    .down-arrow {
+        margin-top: -80px; /* Adjust spacing as needed */
+        align-self: center; /* Ensures the arrow is centered */
+        left: 44%; /* Move to the horizontal center */
+        transform: translateX(-50%); /* Center the arrow precisely */
+        z-index: 100;
+    }
+    
 }

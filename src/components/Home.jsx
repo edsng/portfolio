@@ -61,7 +61,7 @@ const Home = () => {
           className="hero-text"
           variants={itemVariants}
         >
-          edw <br />sng
+          edw<br />sng
         </motion.h1>
         
         {isChrome && (
@@ -84,7 +84,7 @@ const Home = () => {
             className="hero-subtext-safari"
             variants={itemVariants} // Basic animation for Safari
           >
-            my name is Edward<br />i enjoy coding.
+            hi im Edward<br />i code sometimes.
           </motion.h2>
         )}
 
