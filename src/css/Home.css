@@ -99,6 +99,22 @@ h2 a {
     background-clip: text; /* Added standard background-clip for compatibility */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
+    /* Initially no text-shadow */
+    text-shadow: none;
+    
+    /* Add animation to apply text-shadow after a delay */
+    animation: applyTextShadow 1s ease-in-out 3.5s forwards;
+}
+
+/* Keyframes to add text-shadow */
+@keyframes applyTextShadow {
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 
+                     0 0 30px rgba(255, 255, 255, 0.2), 
+                     0 0 40px rgba(255, 0, 255, 0.15), 
+                     0 0 50px rgba(255, 0, 255, 0.1);
+    }
 }
 
 @media (max-width: 768px) {

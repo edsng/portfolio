@@ -9,7 +9,7 @@ const containerVariants = {
     opacity: 1,
     transition: {
       delay: 0.5,
-      duration: 1,
+      duration: 0.7,
       delayChildren: 1,
       staggerChildren: 0.3, // Adjusted stagger for smoother sequence
     },
