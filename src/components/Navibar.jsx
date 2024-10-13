@@ -139,14 +139,14 @@ const NaviBar = () => {
         </div>
         <div className="navi-button-container" ref={containerRef}>
             <NavLink 
-                to="/work" 
+                to="work" 
                 className={({ isActive }) => isActive || location.pathname === '/' ? 'active' : ''}
                 ref={workRef}
                 >
                 Work
             </NavLink>
             <NavLink 
-                to="/info" 
+                to="info" 
                 className={({ isActive }) => isActive ? 'active' : ''}
                 ref={infoRef}
                 >

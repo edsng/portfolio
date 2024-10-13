@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/Home.css';
 import { motion } from 'framer-motion';
 
@@ -32,11 +32,29 @@ const subtextVariants = {
 };
 
 const letterVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 25 }, // Reduced y from 50 to 25
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+    },
+  },
 };
 
 const Home = () => {
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    const ua = navigator.userAgent.toLowerCase();
+    // Detect Safari (exclude Chrome and other browsers)
+    if (ua.includes('safari') && !ua.includes('chrome') && !ua.includes('android')) {
+      setIsSafari(true);
+    }
+  }, []);
+
   return (
     <div className="home-container">
       <motion.div
@@ -51,18 +69,30 @@ const Home = () => {
         >
           Hello <br />World
         </motion.h1>
-        <motion.h2
-          className="hero-subtext"
-          variants={subtextVariants}
-        >
-          {'my name is edward\ni build cool things.'.split('').map((char, index) => (
-            char === '\n' ? <br key={index} /> : (
-              <motion.span key={index} variants={letterVariants}>
-                {char}
-              </motion.span>
-            )
-          ))}
-        </motion.h2>
+        
+        {!isSafari && (
+          <motion.h2
+            className={`hero-subtext ${!isSafari ? 'apply-text-shadow' : ''}`} // Existing hero-subtext
+            variants={subtextVariants}
+          >
+            {'my name is Edward\ni enjoy coding.'.split('').map((char, index) => (
+              char === '\n' ? <br key={index} /> : (
+                <motion.span key={index} variants={letterVariants}>
+                  {char}
+                </motion.span>
+              )
+            ))}
+          </motion.h2>
+        )}
+
+        {isSafari && (
+          <motion.h2
+            className="hero-subtext-safari"
+            variants={itemVariants} // Basic animation for Safari
+          >
+            my name is Edward<br />i enjoy coding.
+          </motion.h2>
+        )}
       </motion.div>
     </div>
   );

@@ -11,9 +11,8 @@ const App = () => {
       <NaviBar /> {/* Include NaviBar globally */}
       <Routes>
         <Route path="/" element={<Home />} /> {/* Root Route */}
-        <Route path="/work" element={<Home />} />
-        <Route path="/info" element={<Info />} />
-        {/* Add other routes as needed */}
+        <Route path="work" element={<Home />} />
+        <Route path="info" element={<Info />} />
       </Routes>
     </>
   )

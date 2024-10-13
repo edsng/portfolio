@@ -103,8 +103,45 @@ h2 a {
     /* Initially no text-shadow */
     text-shadow: none;
     
-    /* Add animation to apply text-shadow after a delay */
+    /* Removed animation from default state */
+    /* animation: applyTextShadow 1s ease-in-out 3.5s forwards; */
+    
+    /* Enable hardware acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.hero-subtext.apply-text-shadow {
+    /* Add animation only when the class is present */
     animation: applyTextShadow 1s ease-in-out 3.5s forwards;
+}
+
+.hero-subtext div {
+    display: flex;
+    flex-wrap: wrap;
+    
+    /* Ensure smooth rendering */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.hero-subtext-safari {
+    font-size: 2em;
+    /* Removed solid color to apply gradient */
+    background: linear-gradient(270deg, #ffffff, #e298ff); /* Added linear gradient */
+    background-clip: text; /* Added standard background-clip for compatibility */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.3), 
+        0 0 30px rgba(255, 255, 255, 0.2), 
+        0 0 40px rgba(255, 0, 255, 0.15), 
+        0 0 50px rgba(255, 0, 255, 0.1);
+        
+    /* Enable hardware acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 /* Keyframes to add text-shadow */
