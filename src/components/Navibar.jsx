@@ -2,7 +2,7 @@ import React, { useState,useEffect, useRef } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import '../css/Navibar.css';
 import icon from '../assets/icon.svg';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaRegCircle } from 'react-icons/fa';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const NaviBar = () => {
@@ -34,7 +34,7 @@ const NaviBar = () => {
       const containerRect = container.getBoundingClientRect();
 
       const left = linkRect.left - containerRect.left + linkRect.width / 2;
-      const width = 31; // Width of the glow line
+      const width = 30; // Width of the glow line
 
       glowLineRef.current.style.left = `${left - width / 2}px`;
       glowLineRef.current.style.width = `${width}px`;
@@ -62,13 +62,31 @@ const NaviBar = () => {
             <span 
                 className="socials-link" 
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                >
-                <FaArrowRight 
-                    style={{
-                      transform: 'rotate(-45deg)',
-                    }} 
-                />
-                <div className="socials-glow"></div>
+            >
+                <AnimatePresence mode="wait">
+                  {!dropdownOpen ? (
+                    <motion.div
+                      key="arrow"
+                      initial={{ opacity: 0, rotate: -45 }}
+                      animate={{ opacity: 1, rotate: -45 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <FaArrowRight color="#ffffff" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="circle"
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <FaRegCircle color="#ffffff" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <div className="socials-glow"></div> {/* Moved below AnimatePresence */}
             </span>
             <AnimatePresence>
               {dropdownOpen && (
