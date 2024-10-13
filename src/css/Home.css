@@ -101,3 +101,10 @@ h2 a {
     -webkit-text-fill-color: transparent;
 }
 
+@media (max-width: 768px) {
+    .hero-container {
+        gap: 50px;
+        padding: 50px;
+        flex-direction: column;
+    }
+}
