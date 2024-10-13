@@ -4,6 +4,7 @@ import '../css/Navibar.css';
 import icon from '../assets/icon.svg';
 import { FaArrowRight, FaRegCircle } from 'react-icons/fa';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ResizeObserver } from '@juggle/resize-observer'; // If not supported, consider a polyfill
 
 const NaviBar = () => {
   const location = useLocation();
@@ -17,29 +18,45 @@ const NaviBar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false); // Added state for dropdown
 
   useEffect(() => {
-    const currentPath = location.pathname;
-    let activeLinkRef;
+    const updateGlowLine = () => {
+      const currentPath = location.pathname;
+      let activeLinkRef;
 
-    if (currentPath === '/work' || currentPath === '/') {
-      activeLinkRef = workRef;
-    } else if (currentPath === '/info') {
-      activeLinkRef = infoRef;
+      if (currentPath === '/work' || currentPath === '/') {
+        activeLinkRef = workRef;
+      } else if (currentPath === '/info') {
+        activeLinkRef = infoRef;
+      }
+
+      if (activeLinkRef && activeLinkRef.current && glowLineRef.current && containerRef.current) {
+        const link = activeLinkRef.current;
+        const container = containerRef.current;
+
+        const linkRect = link.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+
+        const left = linkRect.left - containerRect.left + linkRect.width / 2;
+        const width = 30; // Width of the glow line
+
+        glowLineRef.current.style.left = `${left - width / 2}px`;
+        glowLineRef.current.style.width = `${width}px`;
+      }
+    };
+
+    const resizeObserver = new ResizeObserver(() => {
+      requestAnimationFrame(updateGlowLine);
+    });
+
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
     }
 
-    if (activeLinkRef && activeLinkRef.current && glowLineRef.current) {
-      const link = activeLinkRef.current;
-      const container = containerRef.current;
+    updateGlowLine(); // Initial positioning
 
-      const linkRect = link.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-
-      const left = linkRect.left - containerRect.left + linkRect.width / 2;
-      const width = 30; // Width of the glow line
-
-      glowLineRef.current.style.left = `${left - width / 2}px`;
-      glowLineRef.current.style.width = `${width}px`;
-    }
-  }, [location]);
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [location, dropdownOpen]);
 
    // Handle click outside to close dropdown
    useEffect(() => {

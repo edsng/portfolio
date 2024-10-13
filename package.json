@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@juggle/resize-observer": "^3.4.0",
     "dat.gui": "^0.7.9",
     "framer-motion": "^11.11.8",
     "gsap": "^3.12.5",
