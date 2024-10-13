@@ -28,13 +28,13 @@ h2 a {
 }
 
 .intro-text {
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 
 .intro-text h1 {
     font-size: 2em;
     /* Removed solid color to apply gradient */
-    background: linear-gradient(270deg, #ffffff, #98d9ff); /* Added linear gradient */
+    background: linear-gradient(180deg, #ffffff, #98d9ff); /* Added linear gradient */
     background-clip: text; /* Added standard background-clip for compatibility */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -69,4 +69,102 @@ h2 a {
         0 0 15px rgba(255, 255, 255, 0.2), 
         0 0 20px rgba(255, 0, 255, 0.15), 
         0 0 25px rgba(255, 0, 255, 0.1);
+}
+
+/* Projects */
+
+.card-container {
+    display: flex;
+    flex-direction: row; /* Changed from column to row to align cards horizontally */
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Changed from center to flex-start to align text to the top */
+    margin: 0 20px; /* Updated margin for horizontal spacing */
+    border-radius: 25px; /* Added rounded edges */
+    background-color: rgba(3, 3, 3, 0.5); /* Semi-transparent background */
+    width: 300px; /* Set a fixed width for each card */
+    height: 400px; /* Set a fixed height for each card */
+    padding: 50px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    color: #faedff;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.3), 
+        0 0 15px rgba(255, 255, 255, 0.2), 
+        0 0 20px rgba(255, 255, 255, 0.15), 
+        0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #ffffff93;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.3), 
+        0 0 15px rgba(255, 255, 255, 0.2), 
+        0 0 20px rgba(255, 255, 255, 0.15), 
+        0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+.project-card a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow-icon {
+    margin-top: 40px; /* Add space above the arrow */
+    color: #ffffff93; /* Semi-transparent color to match existing text */
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+
+    /* Optional: Add a hover effect */
+}
+
+.arrow-icon:hover {
+    transform: rotate(0deg); /* Slightly move the arrow up on hover */
+    color: #ffffffd5; /* Semi-transparent color to match existing text */
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px; /* Adjust top margin for better spacing */
+    }
+
+    .project-card {
+        width: 90%; /* Make cards take up most of the screen width */
+        height: 150px; /* Allow height to adjust based on content */
+        padding: 20px; /* Reduce padding for smaller screens */
+        margin: 10px 0; /* Adjust margin for vertical spacing */
+        text-align: left; /* Align text to the left for better readability */
+    }
+
+    .project-card h3 {
+        font-size: 1.2em; /* Slightly reduce font size */
+        margin-top: 10px;
+    }
+
+    .project-card p {
+        font-size: 0.9em; /* Slightly reduce font size */
+    }
+
+    .arrow-icon {   
+        margin-top: 16px; /* Add space above the arrow */
+    }
 }
