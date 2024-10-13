@@ -44,6 +44,8 @@ const letterVariants = {
   },
 };
 
+var isChrome = !!window.chrome;
+
 const Home = () => {
   const [isSafari, setIsSafari] = useState(false);
 
@@ -70,9 +72,9 @@ const Home = () => {
           Hello <br />World
         </motion.h1>
         
-        {!isSafari && (
+        {isChrome && (
           <motion.h2
-            className={`hero-subtext ${!isSafari ? 'apply-text-shadow' : ''}`} // Existing hero-subtext
+            className={`hero-subtext ${isChrome ? 'apply-text-shadow' : ''}`} // Existing hero-subtext
             variants={subtextVariants}
           >
             {'my name is Edward\ni enjoy coding.'.split('').map((char, index) => (
@@ -85,7 +87,7 @@ const Home = () => {
           </motion.h2>
         )}
 
-        {isSafari && (
+        {!isChrome && (
           <motion.h2
             className="hero-subtext-safari"
             variants={itemVariants} // Basic animation for Safari
