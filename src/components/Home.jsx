@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../css/Home.css';
 import { motion } from 'framer-motion';
+import { FaArrowDown } from 'react-icons/fa'; // Added import for FaArrowDown
+import Fynance from './Projects';
 
 // Consolidate variants for better readability and sequential animations
 const containerVariants = {
@@ -47,16 +49,6 @@ const letterVariants = {
 var isChrome = !!window.chrome;
 
 const Home = () => {
-  const [isSafari, setIsSafari] = useState(false);
-
-  useEffect(() => {
-    const ua = navigator.userAgent.toLowerCase();
-    // Detect Safari (exclude Chrome and other browsers)
-    if (ua.includes('safari') && !ua.includes('chrome') && !ua.includes('android')) {
-      setIsSafari(true);
-    }
-  }, []);
-
   return (
     <div className="home-container">
       <motion.div
@@ -69,7 +61,7 @@ const Home = () => {
           className="hero-text"
           variants={itemVariants}
         >
-          Hello <br />World
+          edw <br />sng
         </motion.h1>
         
         {isChrome && (
@@ -77,7 +69,7 @@ const Home = () => {
             className={`hero-subtext ${isChrome ? 'apply-text-shadow' : ''}`} // Existing hero-subtext
             variants={subtextVariants}
           >
-            {'my name is Edward\ni enjoy coding.'.split('').map((char, index) => (
+            {'hi im Edward\ni code sometimes.'.split('').map((char, index) => (
               char === '\n' ? <br key={index} /> : (
                 <motion.span key={index} variants={letterVariants}>
                   {char}
@@ -95,6 +87,24 @@ const Home = () => {
             my name is Edward<br />i enjoy coding.
           </motion.h2>
         )}
+
+        <motion.div
+          className="down-arrow"
+          variants={containerVariants}
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <FaArrowDown size={30} color="#ffffff" />
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="project-container"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <Fynance />
       </motion.div>
     </div>
   );
