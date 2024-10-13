@@ -52,3 +52,52 @@ h2 a {
     opacity: 0.4;
     filter: blur(100px);
 }
+
+.hero-container {
+    display: flex; /* Enables flex layout */
+    align-items: center; /* Vertically centers the items */
+    justify-content: flex-start; /* Horizontally aligns items to the start */
+    gap: 130px; /* Adds space between hero-text and hero-subtext */
+
+    /* Added bounding box styles */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+    border-radius: 25px; /* Rounded corners */
+    padding: 140px; /* Inner spacing */
+    background-color: rgba(3, 3, 3, 0.5); /* Semi-transparent background */
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
+}
+
+.hero-text {
+    font-size: 4em;
+    line-height: 0.9;
+    color: #faedff;
+    /* Added Illuminated Glow Effect */
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 0, 255, 0.4),
+        0 0 40px rgba(255, 0, 255, 0.2);
+    
+    /* Optional: Smooth transition for hover effect */
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+.hero-text:hover {
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.9),
+        0 0 30px rgba(255, 255, 255, 0.7),
+        0 0 40px rgba(255, 0, 255, 0.5),
+        0 0 50px rgba(255, 0, 255, 0.3);
+}
+.hero-subtext {
+    font-size: 2em;
+    /* Removed solid color to apply gradient */
+    background: linear-gradient(270deg, #ffffff, #e298ff); /* Added linear gradient */
+    background-clip: text; /* Added standard background-clip for compatibility */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
