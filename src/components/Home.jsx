@@ -10,6 +10,9 @@ function useScrollSnap(ref) {
   useEffect(() => {
     if (!ref.current) return; // Add a check for ref.current
 
+    const isDesktop = window.matchMedia("(min-width: 1200px)").matches;
+    if (!isDesktop) return; // Do not apply scroll snap on mobile
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -133,9 +136,6 @@ const Home = () => {
       </motion.div>
       <motion.div
         className="project-section snap-container"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
       >
         <Fynance />
       </motion.div>

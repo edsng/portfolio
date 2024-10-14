@@ -139,6 +139,36 @@ h2 a {
     color: #ffffffd5; /* Semi-transparent color to match existing text */
 }
 
+@media (max-width: 1000px) {
+    .card-container {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px; /* Adjust top margin for better spacing */
+    }
+
+    .project-card {
+        width: 90%; /* Make cards take up most of the screen width */
+        height: 150px; /* Allow height to adjust based on content */
+        padding: 20px; /* Reduce padding for smaller screens */
+        margin: 10px 0; /* Adjust margin for vertical spacing */
+        text-align: left; /* Align text to the left for better readability */
+    }
+
+    .project-card h3 {
+        font-size: 1.2em; /* Slightly reduce font size */
+        margin-top: 10px;
+    }
+
+    .project-card p {
+        font-size: 0.9em; /* Slightly reduce font size */
+    }
+
+    .arrow-icon {   
+        margin-top: 16px; /* Add space above the arrow */
+    }
+}
+
 @media (max-width: 768px) {
     .card-container {
         flex-direction: column; /* Stack cards vertically on smaller screens */

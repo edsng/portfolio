@@ -7,3 +7,9 @@ h1, h2, p, a {
 body {
     padding-top: 70px; /* Adjust this value based on the navibar's height */
 }
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevent the body from scrolling */
+}
+
