@@ -39,6 +39,17 @@ h2 a {
     margin-top: -70px; /* Adjust this value based on the navibar's height */
     background: #030303 linear-gradient(180deg, rgba(128, 128, 128, 0.1), rgba(169, 169, 169, 0.1));
 
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    height: 100vh;
+}
+
+.snap-container {
+    scroll-snap-align: start;
+    height: 100vh; /* Each section takes full viewport height */
 }
 
 .home-container::before {
@@ -53,6 +64,13 @@ h2 a {
     pointer-events: none; /* Allows interaction with underlying elements */
     opacity: 0.4;
     filter: blur(100px);
+}
+
+.hero-section {
+    top: 0;
+    height: 100vh;
+    margin-top: 750px;
+    box-sizing: border-box;
 }
 
 .hero-container {
@@ -73,28 +91,6 @@ h2 a {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
 }
 
-.hero-text {
-    font-size: 4em;
-    line-height: 0.9;
-    color: #faedff;
-    /* Added Illuminated Glow Effect */
-    text-shadow: 
-        0 0 10px rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(255, 255, 255, 0.6),
-        0 0 30px rgba(255, 0, 255, 0.4),
-        0 0 40px rgba(255, 0, 255, 0.2);
-    
-    /* Optional: Smooth transition for hover effect */
-    transition: text-shadow 0.3s ease-in-out;
-}
-
-.hero-text:hover {
-    text-shadow: 
-        0 0 20px rgba(255, 255, 255, 0.9),
-        0 0 30px rgba(255, 255, 255, 0.7),
-        0 0 40px rgba(255, 0, 255, 0.5),
-        0 0 50px rgba(255, 0, 255, 0.3);
-}
 .hero-subtext {
     font-size: 2em;
     /* Removed solid color to apply gradient */
@@ -165,7 +161,7 @@ h2 a {
   cursor: pointer;
 }
 
-.project-container {  
+.project-section {  
     /* Center the project-container horizontally */
     display: flex;
     justify-content: center;
@@ -173,9 +169,11 @@ h2 a {
     margin-top: 250px;
     width: 100%;
     height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 200px;
 }
 
-.project-container::before {
+.project-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -186,6 +184,22 @@ h2 a {
     pointer-events: none; /* Allows interaction with underlying elements */
     opacity: 0.4;
     filter: blur(100px);
+}
+
+.hero-image {
+    width: 200px; /* Adjust the size as needed */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))
+            drop-shadow(0 0 30px rgba(255, 0, 255, 0.2))
+            drop-shadow(0 0 40px rgba(255, 0, 255, 0.1));
+    transition: filter 0.3s ease-in-out;
+}
+
+.hero-image:hover {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))
+            drop-shadow(0 0 25px rgba(255, 255, 255, 0.5))
+            drop-shadow(0 0 35px rgba(255, 0, 255, 0.4))
+            drop-shadow(0 0 45px rgba(255, 0, 255, 0.2));
 }
 
 @media (max-width: 768px) {
@@ -223,7 +237,7 @@ h2 a {
     }
 
     .down-arrow {
-        margin-top: -80px; /* Adjust spacing as needed */
+        margin-top: -40px; /* Adjust spacing as needed */
         align-self: center; /* Ensures the arrow is centered */
         left: 44%; /* Move to the horizontal center */
         transform: translateX(-50%); /* Center the arrow precisely */
