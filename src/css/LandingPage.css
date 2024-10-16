@@ -92,6 +92,11 @@ body, html {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
 }
 
+.hero-text.apply-text-shadow {
+  /* Add animation only when the class is present */
+  animation: applyTextShadow 1s ease-in-out 3.5s forwards;
+}
+
 .hero-text {
   text-align: left;
   font-size: 2em;
@@ -102,6 +107,17 @@ body, html {
   -webkit-text-fill-color: transparent;
 
   text-shadow: none;
+}
+
+.hero-subtext-non-chrome {
+  text-align: left;
+  font-size: 2em;
+  /* Removed solid color to apply gradient */
+  background: linear-gradient(270deg, #ffffff, #e298ff); /* Added linear gradient */
+  background-clip: text; /* Added standard background-clip for compatibility */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   animation: applyTextShadow 1s ease-in-out 3.5s forwards;
 }
 
@@ -178,17 +194,6 @@ body, html {
       0 0 15px rgba(255, 255, 255, 0.2), 
       0 0 20px rgba(255, 0, 255, 0.15), 
       0 0 25px rgba(255, 0, 255, 0.1);
-}
-
-.projects-text h2 .highlight {
-  color: var(--secondary-color);
-  font-weight: 700;
-  margin: 0;
-  background: linear-gradient(45deg, #3498db, #ffffff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
 }
 
 .projects-grid {
@@ -309,8 +314,25 @@ body, html {
 /* Add this media query at the end of the file */
 @media (max-width: 768px) {
     .projects-text {
-        margin-top: 70px;
+      margin-top: 70px;
+      width: calc(70%);
     }
+
+    .projects-text h1 {
+      font-size: 2.2em;
+      margin-bottom: 0;
+    }
+    
+    .projects-text h2 {
+      font-size: 1.5em;
+      margin-top: -4px;
+    }
+    
+    .projects-text p {
+      margin-top: 4px;
+      font-size: 1em;
+    }
+    
     .projects-grid {
         flex-direction: column;
         align-items: center;
@@ -319,7 +341,19 @@ body, html {
     .projects-card {
         width: 100%;
         max-width: 230px; /* Adjust this value as needed */
-        padding-bottom: 150px;
+        padding-bottom: 200px;
+    }
+
+    .projects-card h3 {
+      font-size: 2em;
+    }
+    
+    .projects-card p {
+      font-size: 1.2em;
+    }
+
+    .projects-icon {
+      font-size: 1.5em;
     }
 
     /* Add these styles to ensure content fits within the viewport */

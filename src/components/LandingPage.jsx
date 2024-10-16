@@ -32,6 +32,8 @@ function useScrollSnap(ref) {
   }, [ref]);
 }
 
+var isChrome = !!window.chrome;
+
 function LandingPage() {
     const scrollRef = useRef(null);
     useScrollSnap(scrollRef);
@@ -114,18 +116,30 @@ function LandingPage() {
                         variants={item}
                         />
                     
-                    <motion.h2
-                        className={"hero-text"} // Existing hero-subtext
-                        variants={subtextVariants}
-                    >
-                        {'hi im Edward\ni code sometimes.'.split('').map((char, index) => (
-                            char === '\n' ? <br key={index} /> : (
-                                <motion.span key={index} variants={letterVariants}>
-                                    {char}
-                                </motion.span>
-                            )
-                        ))}
-                    </motion.h2>
+                    {isChrome && (
+                        <motion.h2
+                            className={`hero-text ${isChrome ? 'apply-text-shadow' : ''}`} // Existing hero-subtext
+                            variants={subtextVariants}
+                        >
+                            {'hi im Edward\ni code sometimes.'.split('').map((char, index) => (
+                                char === '\n' ? <br key={index} /> : (
+                                    <motion.span key={index} variants={letterVariants}>
+                                        {char}
+                                    </motion.span>
+                                )
+                            ))}
+                        </motion.h2>
+                    )}
+
+                    {!isChrome && (
+                        <motion.h2
+                            className={"hero-subtext-non-chrome"} // Existing hero-subtext
+                            variants={subtextVariants}
+                        >
+                        hi im Edward<br />i code sometimes.
+                        </motion.h2>
+                    )}
+
                 </motion.div>
             </motion.div>
 
