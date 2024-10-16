@@ -299,7 +299,10 @@ body, html {
   font-size: 1.5em;
   color: var(--text-color);
   transition: color 0.3s ease;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25); /* Added subtle glow */
+
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))
+          drop-shadow(0 0 20px rgba(255, 255, 255, 0.4))
+          drop-shadow(0 0 15px rgba(255, 255, 255, 0.2))
 }
 
 .creator-icon:hover {
