@@ -1,0 +1,355 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.landing-page-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.landing-page-container::-webkit-scrollbar {
+  display: none;
+}
+
+.landing-page-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+  transform: translateX(-50%);
+  pointer-events: none; /* Allows interaction with underlying elements */
+  opacity: 0.4;
+  filter: blur(100px);
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding-top: 0; /* Remove top padding */
+}
+
+/* ... existing styles ... */
+
+/* Adjust these styles to ensure content fits within each section */
+.info-container, .creator-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  min-height: 100vh;
+}
+
+/* ... rest of your existing styles ... */
+
+.welcome-section {
+  padding-top: 150px; /* Adjust this value to account for the fixed header */
+}
+
+.welcome-container {
+  margin-bottom: 0;
+}
+
+.welcome-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 130px;
+  padding: 150px; /* Inner spacing */
+
+  /* Added bounding box styles */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+  border-radius: 25px; /* Rounded corners */
+  background-color: rgba(3, 3, 3, 0.5); /* Semi-transparent background */
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
+}
+
+.hero-text {
+  text-align: left;
+  font-size: 2em;
+  /* Removed solid color to apply gradient */
+  background: linear-gradient(270deg, #ffffff, #e298ff); /* Added linear gradient */
+  background-clip: text; /* Added standard background-clip for compatibility */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: none;
+  animation: applyTextShadow 1s ease-in-out 3.5s forwards;
+}
+
+/* Keyframes to add text-shadow */
+@keyframes applyTextShadow {
+  to {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 
+                   0 0 30px rgba(255, 255, 255, 0.2), 
+                   0 0 40px rgba(255, 0, 255, 0.15), 
+                   0 0 50px rgba(255, 0, 255, 0.1);
+  }
+}
+
+.hero-image {
+  width: 200px; /* Adjust the size as needed */
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))
+          drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))
+          drop-shadow(0 0 30px rgba(255, 0, 255, 0.2))
+          drop-shadow(0 0 40px rgba(255, 0, 255, 0.1));
+  transition: filter 0.3s ease-in-out;
+}
+
+.hero-image:hover {
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))
+          drop-shadow(0 0 25px rgba(255, 255, 255, 0.5))
+          drop-shadow(0 0 35px rgba(255, 0, 255, 0.4))
+          drop-shadow(0 0 45px rgba(255, 0, 255, 0.2));
+}
+
+.projects-container {
+  margin-top: 0;
+  padding: 50px 20px;
+}
+
+.projects-text {
+  margin-bottom: 36px;
+  width: calc(55%);
+}
+
+.projects-text h1 {
+  font-size: 2em;
+  margin-bottom: 0;
+
+  /* Removed solid color to apply gradient */
+  background: linear-gradient(180deg, #ffffff, #3498db); /* Added linear gradient */
+  background-clip: text; /* Added standard background-clip for compatibility */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  text-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.3), 
+      0 0 30px rgba(255, 255, 255, 0.2), 
+      0 0 40px rgba(52, 152, 219, 0.15), 
+      0 0 50px rgba(52, 152, 219, 0.1);
+}
+
+.projects-text h2 {
+  font-size: 1.3em;
+  margin-top: -4px;
+  color: #faedff;
+  text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.3), 
+      0 0 15px rgba(255, 255, 255, 0.2), 
+      0 0 20px rgba(255, 0, 255, 0.15), 
+      0 0 25px rgba(255, 0, 255, 0.1);
+}
+
+.projects-text p {
+  margin-top: 4px;
+  font-size: 0.8em;
+  color: #ffffff93;
+  text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.3), 
+      0 0 15px rgba(255, 255, 255, 0.2), 
+      0 0 20px rgba(255, 0, 255, 0.15), 
+      0 0 25px rgba(255, 0, 255, 0.1);
+}
+
+.projects-text h2 .highlight {
+  color: var(--secondary-color);
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(45deg, #3498db, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.projects-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.projects-grid a {
+  text-decoration: none; /* Remove underline from links */
+}
+
+.projects-card {
+  flex: 1;
+  padding: 50px;
+  border-radius: 25px;
+  transition: transform 0.3s ease;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 200px;
+
+  background-color: rgba(3, 3, 3, 0.5); /* Semi-transparent background */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
+}
+
+.projects-icon {
+  color: #ffffff93; /* Semi-transparent color to match existing text */
+  margin-top: 40px;
+  transform: rotate(-45deg);
+  display: flex;
+  justify-content: center;
+
+  transition: transform 0.3s ease;
+}
+
+.projects-card:hover .projects-icon {
+  transform: rotate(0deg);
+  color: #ffffffd5;
+}
+
+.projects-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  width: 100%;
+  text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.3), 
+      0 0 15px rgba(255, 255, 255, 0.2), 
+      0 0 20px rgba(255, 255, 255, 0.15), 
+      0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+.projects-card p {
+  font-size: 0.85em;
+  color: var(--light-grey);
+  width: 100%;
+  text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.3), 
+      0 0 15px rgba(255, 255, 255, 0.2), 
+      0 0 20px rgba(255, 255, 255, 0.15), 
+      0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+.creator-container {
+  margin-top: 0;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.creator-logo img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))
+          drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))
+          drop-shadow(0 0 30px rgba(255, 0, 255, 0.2))
+          drop-shadow(0 0 40px rgba(255, 0, 255, 0.1));
+  transition: filter 0.3s ease-in-out;
+}
+
+.creator-logo img:hover {
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))
+          drop-shadow(0 0 25px rgba(255, 255, 255, 0.5))
+          drop-shadow(0 0 35px rgba(255, 0, 255, 0.4))
+          drop-shadow(0 0 45px rgba(255, 0, 255, 0.2));
+}
+
+.creator-links {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.creator-icon {
+  font-size: 1.5em;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25); /* Added subtle glow */
+}
+
+.creator-icon:hover {
+  color: var(--secondary-color);
+}
+
+.creator-text {
+  font-size: 0.7em;
+  color: #ffffff93;
+}
+
+/* Add this media query at the end of the file */
+@media (max-width: 768px) {
+    .projects-text {
+        margin-top: 70px;
+    }
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-card {
+        width: 100%;
+        max-width: 230px; /* Adjust this value as needed */
+        padding-bottom: 150px;
+    }
+
+    /* Add these styles to ensure content fits within the viewport */
+    .landing-page-container {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .snap-section {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    .projects-container, .creator-container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    .welcome-box {
+      flex-direction: column;
+      padding: 50px;
+      gap: 30px;
+    }
+
+    .hero-image {
+      width: 100px;
+    }
+}

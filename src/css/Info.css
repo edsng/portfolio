@@ -27,28 +27,58 @@ h2 a {
     color: unset;
 }
 
-/* Spotlight Effect */
-.info-container {
-    position: relative;
+body, html {
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;          /* Position it at the top */
-    margin-top: -70px; /* Adjust this value based on the navibar's height */
+}
+  
+.info-page-container {
+height: 100vh;
+overflow-y: scroll;
+scroll-snap-type: y mandatory;
+scroll-behavior: smooth;
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
 }
 
-.info-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2000px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
-    transform: translateX(-50%);
-    pointer-events: none; /* Allows interaction with underlying elements */
-    opacity: 0.4;
-    filter: blur(100px);
+.info-page-container::-webkit-scrollbar {
+display: none;
 }
+
+.info-page-container::before {
+content: '';
+position: absolute;
+top: 0;
+left: 50%;
+width: 100%;
+height: 100vh;
+background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+transform: translateX(-50%);
+pointer-events: none; /* Allows interaction with underlying elements */
+opacity: 0.4;
+filter: blur(100px);
+}
+
+.info-container {
+    margin-top: 0;
+}
+
+.info-container h2 {
+    font-size: 2em;
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+.info-container h2 .highlight {
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(45deg, #3498db, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  
+  }
+  

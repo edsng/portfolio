@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Home from './Home'
+import LandingPage from './LandingPage'
 import Info from './Info'
 import NaviBar from './Navibar' // Import NaviBar
 import '../css/App.css'
@@ -10,8 +10,8 @@ const App = () => {
     <>
       <NaviBar /> {/* Include NaviBar globally */}
       <Routes>
-        <Route path="/" element={<Home />} /> {/* Root Route */}
-        <Route path="work" element={<Home />} />
+        <Route path="/" element={<LandingPage />} /> {/* Root Route */}
+        <Route path="work" element={<LandingPage />} />
         <Route path="info" element={<Info />} />
       </Routes>
     </>

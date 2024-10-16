@@ -73,7 +73,6 @@ const NaviBar = () => {
 
   return (
     <div className="navi-container">
-        <div className="navi-gradient"></div>
         <img src={icon} alt="Logo" className="navi-icon" />
         <div className="navi-socials" ref={socialsRef}>
             <span 
@@ -139,7 +138,7 @@ const NaviBar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    <a href="https://www.instagram.com/rxdlne/" target="_blank" rel="noopener noreferrer">Photo</a>
+                    <a href="https://www.instagram.com/rxdlne/" target="_blank" rel="noopener noreferrer">Insta</a>
                   </motion.NavLink>
                   <motion.NavLink 
                     to="/logout" 
@@ -148,7 +147,7 @@ const NaviBar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                   >
-                    <a href="https://x.com/rxdlne" target="_blank" rel="noopener noreferrer">Quant</a>
+                    <a href="https://x.com/rxdlne" target="_blank" rel="noopener noreferrer">X</a>
                   </motion.NavLink>
                 </motion.div>
               )}

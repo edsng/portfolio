@@ -45,13 +45,6 @@ const Projects = () => {
         viewport={{ once: true }}
       >
         <motion.div className="project-card" variants={itemVariants}>
-          <a href="https://edsng.github.io/fynance" target="_blank" rel="noopener noreferrer">
-            <h3>Fynance</h3>
-            <p>AI-powered financial planning</p>
-            <FaArrowRight className="arrow-icon" /> {/* Added FA up arrow */}
-          </a>
-        </motion.div>
-        <motion.div className="project-card" variants={itemVariants}>
           <a href="https://github.com/edsng/Bitcoin-Price-Forecasting-using-Machine-Learning-Models" target="_blank" rel="noopener noreferrer">
             <h3>Quant</h3>
             <p>Various quantitative finance projects</p>
@@ -59,8 +52,15 @@ const Projects = () => {
           </a>
         </motion.div>
         <motion.div className="project-card" variants={itemVariants}>
-          <a href="https://github.com/edsng/CarPhoto" target="_blank" rel="noopener noreferrer">
-            <h3>CarPhoto</h3>
+          <a href="https://edsng.github.io/fynance" target="_blank" rel="noopener noreferrer">
+            <h3>Fynance</h3>
+            <p>AI-powered financial planning</p>
+            <FaArrowRight className="arrow-icon" /> {/* Added FA up arrow */}
+          </a>
+        </motion.div>
+        <motion.div className="project-card" variants={itemVariants}>
+          <a href="https://github.com/edsng/Carpics" target="_blank" rel="noopener noreferrer">
+            <h3>Carpics</h3>
             <p>Client matching web app for car enthusiasts</p>
             <FaArrowRight className="arrow-icon" /> {/* Added FA up arrow */}
           </a>
