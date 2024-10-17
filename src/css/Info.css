@@ -194,6 +194,114 @@ body, html {
     color: rgba(255, 255, 255, 0.9);
 }
 
+/* Experience */
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.experience-container h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-top: 0px;
+    padding-top: 100px;
+}
+
+.experience-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.experience-logo {
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Added bounding box styles */
+    padding: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    background-color: rgba(39, 39, 39, 0.5);
+
+}
+
+.experience-logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.2))
+    drop-shadow(0 0 15px rgba(255, 255, 255, 0.1))
+}
+
+.experience-logo img:hover {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.4))
+    drop-shadow(0 0 15px rgba(255, 255, 255, 0.2))
+}
+
+.experience-text {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 4px;
+} 
+
+.experience-text h2 {
+    font-size: 1em;
+    margin-bottom: 0px;
+    color: rgb(0, 183, 255);
+    font-weight: 500;
+    margin-top: 0px;
+}
+
+.experience-text h3 {
+    font-size: 1.3em;
+    margin-bottom: 0px;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-top: 0px;
+}
+
+.experience-text p {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    margin: 0;
+}
+
+.resume-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1em;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-top: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.resume-button:hover {
+    color: var(--secondary-color);
+}
+
 /* Add this media query at the end of the file */
 @media (max-width: 1900px) {
     .about-me-text {
