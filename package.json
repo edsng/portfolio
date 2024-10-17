@@ -13,6 +13,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@juggle/resize-observer": "^3.4.0",
     "dat.gui": "^0.7.9",
     "framer-motion": "^11.11.8",

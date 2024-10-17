@@ -34,51 +34,267 @@ body, html {
 }
   
 .info-page-container {
-height: 100vh;
-overflow-y: scroll;
-scroll-snap-type: y mandatory;
-scroll-behavior: smooth;
--ms-overflow-style: none;  /* IE and Edge */
-scrollbar-width: none;  /* Firefox */
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .info-page-container::-webkit-scrollbar {
-display: none;
+    display: none;
 }
 
 .info-page-container::before {
-content: '';
-position: absolute;
-top: 0;
-left: 50%;
-width: 100%;
-height: 100vh;
-background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
-transform: translateX(-50%);
-pointer-events: none; /* Allows interaction with underlying elements */
-opacity: 0.4;
-filter: blur(100px);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+    transform: translateX(-50%);
+    pointer-events: none; /* Allows interaction with underlying elements */
+    opacity: 0.4;
+    filter: blur(100px);
 }
 
-.info-container {
+.intro-container {
     margin-top: 0;
 }
 
-.info-container h2 {
-    font-size: 2em;
-    margin-bottom: 50px;
-    color: var(--text-color);
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin-bottom: 10px;
 }
 
-.info-container h2 .highlight {
+.intro-text h1 {
+    font-size: 2em;
+    margin-bottom: 4px;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-top: 0px;
+}
+
+.intro-text h1 .highlight {
     color: var(--secondary-color);
-    font-weight: 700;
+    font-weight: 500;
     margin: 0;
-    background: linear-gradient(45deg, #3498db, #ffffff);
+    background: linear-gradient(270deg, #3498db, #ffffff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     display: inline-block;
+}
+
+.intro-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-top: 0px;
+}
+
+.intro-container p {
+    color: var(--primary-color);
+    font-size: 0.9em;
+    font-weight: 300;
+    margin: 0;
+}
+
+.intro-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 100px; /* Inner spacing */
+    max-width: 70%;
+    margin-top: 4px;
   
-  }
+    /* Added bounding box styles */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+    border-radius: 25px; /* Rounded corners */
+    background-color: rgba(3, 3, 3, 0.5); /* Semi-transparent background */
+    padding-top: 100px;
+    padding-bottom: 100px;
   
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
+}
+
+.about-me-icon {
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: 500;
+    margin-right: 4px;
+    margin-bottom: -2px;
+
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.4))
+    drop-shadow(0 0 15px rgba(255, 255, 255, 0.2))
+}
+
+.about-me-text {
+    width: 65%;
+    left: 0;
+    text-align: left;
+    font-size: 1.5em;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.general-info-text {
+    padding-bottom: 4px;
+}
+
+.general-info-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+
+    /* Added bounding box styles */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+    border-radius: 25px; /* Rounded corners */
+    background-color: rgba(39, 39, 39, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Subtle frosted effect */
+}
+
+.general-info-card span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.general-info-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+    font-weight: 300;
+    margin: 0;
+}
+
+.language-dot {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.5em;
+    font-weight: 500;
+    margin-bottom: -2px;
+
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3))
+    drop-shadow(0 0 20px rgba(255, 255, 255, 0.2))
+    drop-shadow(0 0 15px rgba(255, 255, 255, 0.1))
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 20px;
+}
+
+.language p{
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Add this media query at the end of the file */
+@media (max-width: 1900px) {
+    .about-me-text {
+        width: 55%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .about-me-text {
+        width: 59%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .intro-box {
+        flex-direction: column;
+        padding: 50px;
+        gap: 30px;
+        margin-top: 5px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .about-me-text {
+        width: 65%;
+    }
+
+    .intro-text {
+        max-width: 50%;
+    }    
+
+    .intro-text h1 {
+        font-size: 1.5em;
+    }
+
+    .language {
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-box {
+        flex-direction: column;
+        padding: 30px;
+        gap: 10px;
+        margin-top: 5px;
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+
+    .about-me-text {
+        width: 60%;
+    }
+
+    .intro-text {
+        max-width: 70%;
+    }    
+
+    .intro-text h1 {
+        font-size: 1.5em;
+    }
+
+    .language {
+        padding-left: 10px;
+    }
+}
+
+@media (max-height: 700px) {
+    .about-me-text {
+        width: 57%;
+        max-width: 65%;
+    }
+}
+
+@media (max-width: 500px) {
+    .intro-box {
+        flex-direction: column;
+        padding: 30px;
+        gap: 10px;
+        margin-top: 5px;
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+
+    .about-me-text {
+        width: 60%;
+    }
+
+    .intro-text {
+        max-width: 80%;
+    }    
+
+    .intro-text h1 {
+        font-size: 1.7em;
+    }
+
+    .general-info-card {
+        font-size: 1em;
+    }
+
+    .language {
+        padding-left: 10px;
+    }
+}
