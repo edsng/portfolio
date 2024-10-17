@@ -67,8 +67,8 @@ body, html {
 .intro-text {
     display: flex;
     flex-direction: column;
-    max-width: 50%;
     margin-bottom: 10px;
+    max-width: 550px;
 }
 
 .intro-text h1 {
@@ -111,8 +111,6 @@ body, html {
     justify-content: center;
     gap: 40px;
     padding: 100px; /* Inner spacing */
-    max-width: 70%;
-    margin-top: 4px;
   
     /* Added bounding box styles */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
@@ -137,12 +135,11 @@ body, html {
 }
 
 .about-me-text {
-    width: 65%;
-    left: 0;
-    text-align: left;
+    text-align: start;
     font-size: 1.5em;
     color: var(--text-color);
     font-weight: 500;
+    padding-left: 30px;
 }
 
 .general-info-text {
@@ -157,8 +154,10 @@ body, html {
     /* Added bounding box styles */
     border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
     border-radius: 25px; /* Rounded corners */
-    background-color: rgba(39, 39, 39, 0.5); /* Semi-transparent background */
+    background-color: rgba(31, 31, 31, 0.3); /* Semi-transparent background */
     backdrop-filter: blur(5px); /* Subtle frosted effect */
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
 }
 
 .general-info-card span {
@@ -205,12 +204,18 @@ body, html {
 }
 
 .experience-container h1 {
-    font-size: 1.5em;
+    font-size: 2em;
     margin-bottom: 10px;
     color: var(--text-color);
     font-weight: 500;
     margin-top: 0px;
-    padding-top: 100px;
+    padding-top: 40px;
+
+    text-shadow: 
+                0 0 10px rgba(255, 255, 255, 0.3), 
+                0 0 15px rgba(255, 255, 255, 0.2), 
+                0 0 20px rgba(255, 255, 255, 0.15), 
+                0 0 25px rgba(255, 255, 255, 0.1);
 }
 
 .experience-card {
@@ -228,13 +233,15 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 30px;
 
     /* Added bounding box styles */
-    padding: 30px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 25px;
-    background-color: rgba(39, 39, 39, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+    border-radius: 25px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Subtle frosted effect */
 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
 }
 
 .experience-logo img {
@@ -252,6 +259,10 @@ body, html {
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5))
     drop-shadow(0 0 20px rgba(255, 255, 255, 0.4))
     drop-shadow(0 0 15px rgba(255, 255, 255, 0.2))
+}
+
+.shift-left {
+    padding-right: 10px;
 }
 
 .experience-text {
@@ -295,24 +306,14 @@ body, html {
     margin-top: 20px;
     text-decoration: none;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-in-out;
+
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.4))
+            drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))
 }
 
 .resume-button:hover {
-    color: var(--secondary-color);
-}
-
-/* Add this media query at the end of the file */
-@media (max-width: 1900px) {
-    .about-me-text {
-        width: 55%;
-    }
-}
-
-@media (max-width: 1600px) {
-    .about-me-text {
-        width: 59%;
-    }
+    color: rgb(0, 183, 255);
 }
 
 @media (max-width: 1200px) {
@@ -326,12 +327,8 @@ body, html {
     }
 
     .about-me-text {
-        width: 65%;
+        padding-left: 70px;
     }
-
-    .intro-text {
-        max-width: 50%;
-    }    
 
     .intro-text h1 {
         font-size: 1.5em;
@@ -345,34 +342,41 @@ body, html {
 @media (max-width: 768px) {
     .intro-box {
         flex-direction: column;
-        padding: 30px;
+        padding: 50px;
         gap: 10px;
         margin-top: 5px;
         margin-left: 50px;
         margin-right: 50px;
       }
 
-    .about-me-text {
-        width: 60%;
-    }
-
-    .intro-text {
-        max-width: 70%;
-    }    
-
     .intro-text h1 {
         font-size: 1.5em;
     }
 
+    .intro-text p {
+        font-size: 0.8em;
+    }    
+
     .language {
         padding-left: 10px;
     }
-}
 
-@media (max-height: 700px) {
-    .about-me-text {
-        width: 57%;
-        max-width: 65%;
+    .experience-container h1 {
+        padding-top: 0px;
+    }
+
+    .experience-card {
+        gap: 20px;
+    }
+
+    .experience-logo {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+    }
+
+    .shift-left {
+        padding-right: 5px;
     }
 }
 
@@ -385,14 +389,6 @@ body, html {
         margin-left: 50px;
         margin-right: 50px;
       }
-
-    .about-me-text {
-        width: 60%;
-    }
-
-    .intro-text {
-        max-width: 80%;
-    }    
 
     .intro-text h1 {
         font-size: 1.7em;

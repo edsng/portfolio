@@ -152,7 +152,7 @@ function LandingPage() {
             >
                 <div className="projects-text"> 
                     <motion.h1 variants={projectsItem}>korean american</motion.h1>
-                    <motion.h2 variants={projectsItem}>software engineer based in los angeles</motion.h2>
+                    <motion.h2 variants={projectsItem}>full stack software engineer based in los angeles</motion.h2>
                     <motion.p variants={projectsItem}>Computer Science @ University of California, Riverside</motion.p>
                 </div>
 

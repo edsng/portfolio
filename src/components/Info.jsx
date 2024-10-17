@@ -81,29 +81,31 @@ function Info() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
             >
-                
-                <motion.p className="about-me-text" variants={item} ><FaRegDotCircle className="about-me-icon" />about me</motion.p>
-                <motion.div className="intro-box" variants={container}>
-                    <motion.div className="intro-text" variants={item}>
-                        <motion.h1 variants={item}>
-                            The people who are crazy enough to think they can change the world <br /><span className="highlight">are the ones who do.</span>
-                        </motion.h1>
-                        <motion.p variants={item} style={{color: 'rgba(255, 255, 255, 0.6)'}}>Steve Jobs</motion.p>
-                    </motion.div>
-                    <motion.div className="general-info" variants={container}>
-                        <motion.p className="general-info-text" variants={container} style={{paddingLeft: '15px'}}><FaRegDotCircle className="about-me-icon" />general info</motion.p>
-                        <motion.div className="general-info-card" variants={container}>
-                            <motion.p variants={item}>name: <span>Edward Song</span></motion.p>
-                            <motion.p variants={item}>age: <span>22</span></motion.p>
-                            <motion.p variants={item}>major: <span>Computer Science</span></motion.p>
-                            <motion.p variants={item}>location: <span>Los Angeles, CA</span></motion.p>
-                            <motion.p variants={item}>languages: </motion.p>
-                            <motion.div className="languages" variants={item}>
-                                <motion.p className="language" variants={item}><FaCircle className="language-dot"  /> <span>c++</span></motion.p>
-                                <motion.p className="language" variants={item}><FaCircle className="language-dot"  /> <span>python</span></motion.p>
-                                <motion.p className="language" variants={item}><FaCircle className="language-dot"  /> <span>javascript</span></motion.p>
-                                <motion.p className="language" variants={item}><FaCircle className="language-dot"  /> <span>java</span></motion.p>
-                                <motion.p className="language" variants={item}><FaCircle className="language-dot" /> <span>sql</span></motion.p>
+                <motion.div className="about-me-container" variants={container}>
+                    <motion.p className="about-me-text" variants={item}><FaRegDotCircle className="about-me-icon" />about me</motion.p>
+                    <motion.div className="intro-box" variants={container}>
+                        <motion.div className="intro-text" variants={item}>
+                            <motion.h1 variants={item}>
+                                The people who are crazy enough to think they can change the world<br /><span className="highlight">are the ones who do.</span>
+                            </motion.h1>
+                            <motion.p variants={item} style={{color: 'rgba(255, 255, 255, 0.6)'}}>Steve Jobs</motion.p>
+                        </motion.div>
+                        <motion.div className="general-info" variants={container}>
+                            <motion.p className="general-info-text" variants={container} style={{paddingLeft: '15px'}}><FaRegDotCircle className="about-me-icon" />general info</motion.p>
+                            <motion.div className="general-info-card" variants={container}>
+                                <motion.p variants={item}>name: <span>Edward Song</span></motion.p>
+                                <motion.p variants={item}>age: <span>22</span></motion.p>
+                                <motion.p variants={item}>major: <span>Computer Science</span></motion.p>
+                                <motion.p variants={item}>hobbies: <span>Cars, Photo</span></motion.p>
+                                <motion.p variants={item}>location: <span>Los Angeles, CA</span></motion.p>
+                                <motion.p variants={item}>languages: </motion.p>
+                                <motion.div className="languages" variants={container}>
+                                    <motion.p className="language" variants={item}><FaCircle className="language-dot"  /> <span>c++</span></motion.p>
+                                    <motion.p className="language" variants={item}><FaCircle className="language-dot"  /> <span>python</span></motion.p>
+                                    <motion.p className="language" variants={item}><FaCircle className="language-dot"  /> <span>javascript</span></motion.p>
+                                    <motion.p className="language" variants={item}><FaCircle className="language-dot"  /> <span>java</span></motion.p>
+                                    <motion.p className="language" variants={item}><FaCircle className="language-dot" /> <span>sql</span></motion.p>
+                                </motion.div>
                             </motion.div>
                         </motion.div>
                     </motion.div>
@@ -119,7 +121,7 @@ function Info() {
                 <motion.h1 variants={infoItem}>Experience</motion.h1>
                 <motion.div className="experience-card" variants={fadeInVariant}>
                     <motion.div className="experience-logo" variants={fadeInVariant}>
-                        <motion.img src={rapidnetworks} style={{paddingRight: '10px'}} alt="Experience Logo" />
+                        <motion.img src={rapidnetworks} className="shift-left" alt="Experience Logo" />
                     </motion.div>
                     <motion.div className="experience-text" variants={fadeInVariant}>
                         <motion.h2 variants={infoItem}>Front-End Engineer</motion.h2>
@@ -139,7 +141,7 @@ function Info() {
                 </motion.div>
                 <motion.div className="experience-card" variants={fadeInVariant}>
                     <motion.div className="experience-logo" variants={fadeInVariant}>
-                        <motion.img src={rapidnetworks} style={{paddingRight: '10px'}} alt="Experience Logo" />
+                        <motion.img src={rapidnetworks} className="shift-left" alt="Experience Logo" />
                     </motion.div>
                     <motion.div className="experience-text" variants={fadeInVariant}>
                         <motion.h2 variants={infoItem}>Logistics Staff</motion.h2>
