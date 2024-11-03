@@ -203,13 +203,22 @@ body, html {
     height: 100vh;
 }
 
-.experience-container h1 {
+.experiences-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 70%;
+}
+
+.experiences-wrapper h1 {
     font-size: 2em;
     margin-bottom: 10px;
     color: var(--text-color);
     font-weight: 500;
     margin-top: 0px;
     padding-top: 40px;
+    text-align: center;
 
     text-shadow: 
                 0 0 10px rgba(255, 255, 255, 0.3), 
@@ -316,6 +325,23 @@ body, html {
     color: rgb(0, 183, 255);
 }
 
+@media (max-width: 1536px) {
+    .experiences-wrapper h1 {
+        padding-top: 60px;
+    }
+
+    .experience-card {
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .experience-logo {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+    }
+}
+
 @media (max-width: 1200px) {
     .intro-box {
         flex-direction: column;
@@ -336,6 +362,10 @@ body, html {
 
     .language {
         padding-left: 10px;
+    }
+
+    .experience-card {
+        padding: 10px;
     }
 }
 
@@ -361,12 +391,9 @@ body, html {
         padding-left: 10px;
     }
 
-    .experience-container h1 {
-        padding-top: 0px;
-    }
-
     .experience-card {
         gap: 20px;
+        padding: 10px;
     }
 
     .experience-logo {
@@ -400,5 +427,34 @@ body, html {
 
     .language {
         padding-left: 10px;
+    }
+
+    .experiences-wrapper h1 {
+        padding-top: 30px;
+    }
+    
+    .experience-card {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1000px) and (max-height: 600px) {
+    .experiences-wrapper {
+        max-height: 30%;
+    }
+
+    .experiences-wrapper h1 {
+        padding-top: 60px;
+    }
+
+    .experience-card {
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .experience-logo {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
     }
 }

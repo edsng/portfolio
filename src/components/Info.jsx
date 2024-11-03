@@ -118,38 +118,40 @@ function Info() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
             >
-                <motion.h1 variants={infoItem}>Experience</motion.h1>
-                <motion.div className="experience-card" variants={fadeInVariant}>
-                    <motion.div className="experience-logo" variants={fadeInVariant}>
-                        <motion.img src={rapidnetworks} className="shift-left" alt="Experience Logo" />
+                <motion.div className="experiences-wrapper" variants={fadeInVariant}>
+                    <motion.h1 variants={infoItem}>Experience</motion.h1>
+                    <motion.div className="experience-card" variants={fadeInVariant}>
+                        <motion.div className="experience-logo" variants={fadeInVariant}>
+                            <motion.img src={rapidnetworks} className="shift-left" alt="Experience Logo" />
+                        </motion.div>
+                        <motion.div className="experience-text" variants={fadeInVariant}>
+                            <motion.h2 variants={infoItem}>Front-End Engineer</motion.h2>
+                            <motion.h3 variants={infoItem}>Rapid Networks</motion.h3>
+                            <motion.p variants={infoItem}>2024 - Los Angeles, CA</motion.p>
+                        </motion.div>
                     </motion.div>
-                    <motion.div className="experience-text" variants={fadeInVariant}>
-                        <motion.h2 variants={infoItem}>Front-End Engineer</motion.h2>
-                        <motion.h3 variants={infoItem}>Rapid Networks</motion.h3>
-                        <motion.p variants={infoItem}>2024 - Los Angeles, CA</motion.p>
+                    <motion.div className="experience-card" variants={fadeInVariant}>
+                        <motion.div className="experience-text nexg" style={{textAlign: 'end'}} variants={fadeInVariant}>
+                            <motion.h2 variants={infoItem}>Technical Support Engineer</motion.h2>
+                            <motion.h3 variants={infoItem}>Network Expert Group</motion.h3>
+                            <motion.p variants={infoItem}>2020 - Los Angeles, CA</motion.p>
+                        </motion.div>
+                        <motion.div className="experience-logo" variants={fadeInVariant}>
+                            <motion.img src={nexg} alt="Experience Logo" />
+                        </motion.div>
                     </motion.div>
+                    <motion.div className="experience-card" variants={fadeInVariant}>
+                        <motion.div className="experience-logo" variants={fadeInVariant}>
+                            <motion.img src={rapidnetworks} className="shift-left" alt="Experience Logo" />
+                        </motion.div>
+                        <motion.div className="experience-text" variants={fadeInVariant}>
+                            <motion.h2 variants={infoItem}>Logistics Staff</motion.h2>
+                            <motion.h3 variants={infoItem}>Rapid Networks</motion.h3>
+                            <motion.p variants={infoItem}>2020 - Los Angeles, CA</motion.p>
+                        </motion.div>
+                    </motion.div>
+                    <motion.a href={"https://docs.google.com/document/d/1IXSPeeWzdQOGPxRNA1LVZF2PR7a-5xvlymQfJBaZaFc/edit?usp=sharing"} className="resume-button" variants={infoItem} target="_blank" rel="noopener noreferrer">resume <FaArrowRight style={{transform: 'rotate(-45deg)', paddingBottom: '2px'}}/></motion.a>
                 </motion.div>
-                <motion.div className="experience-card" variants={fadeInVariant}>
-                    <motion.div className="experience-text nexg" style={{textAlign: 'end'}} variants={fadeInVariant}>
-                        <motion.h2 variants={infoItem}>Technical Support Engineer</motion.h2>
-                        <motion.h3 variants={infoItem}>Network Expert Group</motion.h3>
-                        <motion.p variants={infoItem}>2020 - Los Angeles, CA</motion.p>
-                    </motion.div>
-                    <motion.div className="experience-logo" variants={fadeInVariant}>
-                        <motion.img src={nexg} alt="Experience Logo" />
-                    </motion.div>
-                </motion.div>
-                <motion.div className="experience-card" variants={fadeInVariant}>
-                    <motion.div className="experience-logo" variants={fadeInVariant}>
-                        <motion.img src={rapidnetworks} className="shift-left" alt="Experience Logo" />
-                    </motion.div>
-                    <motion.div className="experience-text" variants={fadeInVariant}>
-                        <motion.h2 variants={infoItem}>Logistics Staff</motion.h2>
-                        <motion.h3 variants={infoItem}>Rapid Networks</motion.h3>
-                        <motion.p variants={infoItem}>2020 - Los Angeles, CA</motion.p>
-                    </motion.div>
-                </motion.div>
-                <motion.a href={"https://docs.google.com/document/d/1IXSPeeWzdQOGPxRNA1LVZF2PR7a-5xvlymQfJBaZaFc/edit?usp=sharing"} className="resume-button" variants={infoItem} target="_blank" rel="noopener noreferrer">resume <FaArrowRight style={{transform: 'rotate(-45deg)', paddingBottom: '2px'}}/></motion.a>
             </motion.div>
         </div>
     );
