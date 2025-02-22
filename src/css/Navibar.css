@@ -81,10 +81,6 @@
 /* Adjust other elements if needed to prevent content from being hidden behind the fixed navibar */
 /* For example, you might need to add padding-top to the main content */
 
-body {
-    padding-top: 70px; /* Adjust this value based on the navibar's height */
-}
-
 /* Added styles for the icon */
 .navi-icon {
     position: absolute;

@@ -1,5 +1,3 @@
-import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import logo from '../assets/icon.svg'; // Import your logo
@@ -7,36 +5,9 @@ import '../css/LandingPage.css';
 import icon from '../assets/icon.svg'; // Added import for icon.svg
 
 
-function useScrollSnap(ref) {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            });
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    const sections = ref.current.querySelectorAll('.snap-section');
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, [ref]);
-}
-
 var isChrome = !!window.chrome;
 
 function LandingPage() {
-    const scrollRef = useRef(null);
-    useScrollSnap(scrollRef);
 
     const container = {
         hidden: { opacity: 0 },
@@ -101,7 +72,7 @@ function LandingPage() {
 
 
     return (
-        <div className="landing-page-container" ref={scrollRef}>
+        <div className="landing-page-container">
             <motion.div 
                 className="welcome-container snap-section"
                 variants={container}

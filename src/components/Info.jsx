@@ -1,38 +1,11 @@
-import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaRegDotCircle, FaCircle } from 'react-icons/fa';
 import '../css/Info.css';
 import rapidnetworks from '../assets/rapidnetworks.svg';
 import nexg from '../assets/nexg.svg';
 
-function useScrollSnap(ref) {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            });
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    const sections = ref.current.querySelectorAll('.snap-section');
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, [ref]);
-}
 
 function Info() {
-    const scrollRef = useRef(null);
-    useScrollSnap(scrollRef);
 
     const container = {
         hidden: { opacity: 0 },
@@ -73,7 +46,7 @@ function Info() {
     };
 
     return (
-        <div className="info-page-container" ref={scrollRef}>
+        <div className="info-page-container">
             <motion.div 
                 className="intro-container snap-section"
                 variants={container}
