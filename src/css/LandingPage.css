@@ -92,14 +92,64 @@ body, html {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Added inner glow */
 }
 
-.hero-text.apply-text-shadow {
-  /* Add animation only when the class is present */
-  animation: applyTextShadow 1s ease-in-out 3.5s forwards;
+.typewriter {
+  width: 100%;
+}
+
+.line01 {
+  border-right: 3px solid #ffffff;
+  width: 0%;
+  white-space: nowrap;
+
+  animation:
+      typing1 2s steps(12) forwards, /* Type out over 2s */
+      cursor .4s step-end infinite alternate,
+      removeCursor1 0s 2s forwards,
+      applyTextShadow 1s ease-in-out 4s forwards;
+}
+
+.line02 {
+  border-right: 3px solid transparent;
+  width: 0%;
+  white-space: nowrap;
+
+  animation:
+    typing2 2s steps(16) 2s forwards, /* 2s typing, 2s delay */
+    showCursor2 0s 2s forwards,
+    cursor 0.4s 2s step-end infinite alternate,
+    applyTextShadow 1s ease-in-out 4s forwards;
+}
+
+/* typed width for line01 (12 characters) */
+@keyframes cursor {
+  50% { border-color: transparent }
+}
+
+@keyframes removeCursor1 {
+  to {
+    border-right: none; /* or border-color: transparent */
+  }
+}
+
+@keyframes showCursor2 {
+  to { border-color: #fff; }
+}
+
+@keyframes typing1 {
+  from { width: 0; }
+  to   { width: 100%; } 
+}
+
+/* typed width for line02 (16 characters) */
+@keyframes typing2 {
+  from { width: 0; }
+  to   { width: 100%; } 
 }
 
 .hero-text {
   text-align: left;
   font-size: 2em;
+  font-weight: 700;
   /* Removed solid color to apply gradient */
   background: linear-gradient(270deg, #ffffff, #e298ff); /* Added linear gradient */
   background-clip: text; /* Added standard background-clip for compatibility */
@@ -107,18 +157,6 @@ body, html {
   -webkit-text-fill-color: transparent;
 
   text-shadow: none;
-}
-
-.hero-subtext-non-chrome {
-  text-align: left;
-  font-size: 2em;
-  /* Removed solid color to apply gradient */
-  background: linear-gradient(270deg, #ffffff, #e298ff); /* Added linear gradient */
-  background-clip: text; /* Added standard background-clip for compatibility */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  animation: applyTextShadow 1s ease-in-out 3.5s forwards;
 }
 
 /* Keyframes to add text-shadow */

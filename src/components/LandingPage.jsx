@@ -87,29 +87,10 @@ function LandingPage() {
                         variants={item}
                         />
                     
-                    {isChrome && (
-                        <motion.h2
-                            className={`hero-text ${isChrome ? 'apply-text-shadow' : ''}`} // Existing hero-subtext
-                            variants={subtextVariants}
-                        >
-                            {'hi im Edward\ni code sometimes.'.split('').map((char, index) => (
-                                char === '\n' ? <br key={index} /> : (
-                                    <motion.span key={index} variants={letterVariants}>
-                                        {char}
-                                    </motion.span>
-                                )
-                            ))}
-                        </motion.h2>
-                    )}
-
-                    {!isChrome && (
-                        <motion.h2
-                            className={"hero-subtext-non-chrome"} // Existing hero-subtext
-                            variants={subtextVariants}
-                        >
-                        hi im Edward<br />i code sometimes.
-                        </motion.h2>
-                    )}
+                    <div className="typewriter">
+                        <p className="hero-text line01">hi im Edward</p>
+                        <p className="hero-text line02">i enjoy building</p>
+                    </div>
 
                 </motion.div>
             </motion.div>
