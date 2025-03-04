@@ -4,11 +4,7 @@ import logo from '../assets/icon.svg'; // Import your logo
 import '../css/LandingPage.css';
 import icon from '../assets/icon.svg'; // Added import for icon.svg
 
-
-var isChrome = !!window.chrome;
-
 function LandingPage() {
-
     const container = {
         hidden: { opacity: 0 },
         visible: {
@@ -46,30 +42,6 @@ function LandingPage() {
             transition: { duration: 1.2 }
         }
     };
-
-    const subtextVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.05,
-            },
-        },
-    };
-      
-    const letterVariants = {
-        hidden: { opacity: 0, y: 25 }, // Reduced y from 50 to 25
-        visible: { 
-            opacity: 1, 
-            y: 0,
-            transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-            },
-        },
-    };
-
 
     return (
         <div className="landing-page-container">

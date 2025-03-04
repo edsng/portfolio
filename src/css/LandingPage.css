@@ -171,18 +171,13 @@ body, html {
 
 .hero-image {
   width: 200px; /* Adjust the size as needed */
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))
-          drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))
-          drop-shadow(0 0 30px rgba(255, 0, 255, 0.2))
-          drop-shadow(0 0 40px rgba(255, 0, 255, 0.1));
   transition: filter 0.3s ease-in-out;
 }
 
 .hero-image:hover {
-  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.6))
+  filter:
           drop-shadow(0 0 25px rgba(255, 255, 255, 0.5))
           drop-shadow(0 0 35px rgba(255, 0, 255, 0.4))
-          drop-shadow(0 0 45px rgba(255, 0, 255, 0.2));
 }
 
 .projects-container {

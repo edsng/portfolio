@@ -274,6 +274,11 @@ body, html {
     padding-right: 10px;
 }
 
+.driversclub {
+    border-radius: 25px;
+
+}
+
 .experience-text {
     display: flex;
     flex-direction: column;
