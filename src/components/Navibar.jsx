@@ -114,15 +114,6 @@ const NaviBar = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <motion.NavLink 
-                    to="/logout" 
-                    className="dropdown-item"
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05 }}
-                  >
-                    <a href="https://docs.google.com/document/d/1IXSPeeWzdQOGPxRNA1LVZF2PR7a-5xvlymQfJBaZaFc/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Resume</a>
-                  </motion.NavLink>
-                  <motion.NavLink 
                     to="/profile" 
                     className="dropdown-item"
                     initial={{ opacity: 0, y: -10 }}
@@ -130,6 +121,15 @@ const NaviBar = () => {
                     transition={{ delay: 0.1 }}
                   >
                     <a href="https://www.linkedin.com/in/edwsng" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                  </motion.NavLink>
+                  <motion.NavLink 
+                    to="/logout" 
+                    className="dropdown-item"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.15 }}
+                  >
+                    <a href="https://docs.google.com/document/d/1IXSPeeWzdQOGPxRNA1LVZF2PR7a-5xvlymQfJBaZaFc/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Resume</a>
                   </motion.NavLink>
                   <motion.NavLink 
                     to="/logout" 
