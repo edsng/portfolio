@@ -82,8 +82,8 @@ function LandingPage() {
 
                 <div className="projects-grid">
                     <motion.a className="projects-card" variants={projectsItem} href="https://github.com/edsng/Bitcoin-Price-Forecasting-using-Machine-Learning-Models" target="_blank" rel="noopener noreferrer">
-                        <h3>Quant</h3>
-                        <p>Various quantitative finance projects</p>
+                        <h3>ML Analysis</h3>
+                        <p>k-NN & LSTM analysis of various commodities</p>
                         <FaArrowRight className="projects-icon" />
                     </motion.a>
                     <motion.a className="projects-card" variants={projectsItem} href="https://edsng.github.io/fynance" target="_blank" rel="noopener noreferrer">
@@ -91,9 +91,9 @@ function LandingPage() {
                         <p>AI-powered financial planning</p>
                         <FaArrowRight className="projects-icon" />
                     </motion.a>
-                    <motion.a className="projects-card" variants={projectsItem} href="https://github.com/edsng/Carpics" target="_blank" rel="noopener noreferrer">
-                        <h3>Carpics</h3>
-                        <p>Client matching web app for car enthusiasts</p>
+                    <motion.a className="projects-card" variants={projectsItem} href="https://github.com/edsng/bentotemplate" target="_blank" rel="noopener noreferrer">
+                        <h3>Bento</h3>
+                        <p>React Bento style personal website template</p>
                         <FaArrowRight className="projects-icon" />
                     </motion.a>
                 </div>
